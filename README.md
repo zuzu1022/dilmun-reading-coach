@@ -8,7 +8,7 @@ To upload your local folder into this repository (for example, `C:\Users\<userna
 2. Run:
 
 ```bash
-cd /c/Users/<username>/Desktop/<your-project-folder>
+cd /c/Users/<username>/Desktop/DilmunReading
 git init
 git branch -M main
 git remote add origin https://github.com/zuzu1022/dilmun-reading-coach.git
