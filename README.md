@@ -8,7 +8,7 @@ To upload your local folder into this repository (for example, `C:\Users\zaina\D
 2. Run:
 
 ```bash
-cd <path-to-your-local-folder>
+cd /path/to/your/folder
 git init
 git branch -M main
 git remote add origin https://github.com/zuzu1022/dilmun-reading-coach.git
@@ -21,6 +21,13 @@ If `git push` is rejected because remote `main` already has commits, run:
 
 ```bash
 git pull --rebase origin main
+git push -u origin main
+```
+
+If rebase conflicts appear, resolve them, then continue with:
+
+```bash
+git rebase --continue
 git push -u origin main
 ```
 
