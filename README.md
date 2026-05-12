@@ -2,9 +2,9 @@
 
 ## Upload local project folder
 
-To upload your local folder into this repository (for example, `C:\Users\<username>\Desktop\DilmunReading`, which is `/c/Users/<username>/Desktop/DilmunReading` in Git Bash):
+To upload your local folder into this repository (replace `<username>` with your Windows username; for example, `C:\Users\<username>\Desktop\DilmunReading`, which is `/c/Users/<username>/Desktop/DilmunReading` in Git Bash):
 
-1. Open Git Bash (or Command Prompt).
+1. Open Git Bash.
 2. Run:
 
 ```bash
