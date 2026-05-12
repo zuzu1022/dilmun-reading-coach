@@ -1,0 +1,11 @@
+E:\HussainWebsite\src\DilmunReadingCoach.Core\bin\Release\net8.0\DilmunReadingCoach.Core.deps.json
+E:\HussainWebsite\src\DilmunReadingCoach.Core\bin\Release\net8.0\DilmunReadingCoach.Core.dll
+E:\HussainWebsite\src\DilmunReadingCoach.Core\bin\Release\net8.0\DilmunReadingCoach.Core.pdb
+E:\HussainWebsite\src\DilmunReadingCoach.Core\obj\Release\net8.0\DilmunReadingCoach.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\HussainWebsite\src\DilmunReadingCoach.Core\obj\Release\net8.0\DilmunReadingCoach.Core.AssemblyInfoInputs.cache
+E:\HussainWebsite\src\DilmunReadingCoach.Core\obj\Release\net8.0\DilmunReadingCoach.Core.AssemblyInfo.cs
+E:\HussainWebsite\src\DilmunReadingCoach.Core\obj\Release\net8.0\DilmunReadingCoach.Core.csproj.CoreCompileInputs.cache
+E:\HussainWebsite\src\DilmunReadingCoach.Core\obj\Release\net8.0\DilmunReadingCoach.Core.dll
+E:\HussainWebsite\src\DilmunReadingCoach.Core\obj\Release\net8.0\refint\DilmunReadingCoach.Core.dll
+E:\HussainWebsite\src\DilmunReadingCoach.Core\obj\Release\net8.0\DilmunReadingCoach.Core.pdb
+E:\HussainWebsite\src\DilmunReadingCoach.Core\obj\Release\net8.0\ref\DilmunReadingCoach.Core.dll

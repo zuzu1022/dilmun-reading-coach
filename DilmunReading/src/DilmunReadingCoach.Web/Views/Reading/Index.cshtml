@@ -1,0 +1,59 @@
+@model List<ReadingProgress>
+@{
+    ViewData["Title"] = "Reading Records";
+}
+
+<h2>Reading Records</h2>
+<hr />
+
+<div class="row mb-3">
+    <div class="col-md-6">
+        <a asp-action="Create" class="btn btn-primary">Add New Record</a>
+    </div>
+    <div class="col-md-6">
+        <form method="get" class="d-flex">
+            <select name="classroomId" class="form-select me-2" asp-items="@(new SelectList(ViewBag.Classrooms, "Id", "Name", ViewContext.HttpContext.Request.Query["classroomId"]))">
+                <option value="">All Classes</option>
+            </select>
+            <input type="date" name="weekStart" class="form-control me-2" value="@ViewContext.HttpContext.Request.Query["weekStart"]" />
+            <button type="submit" class="btn btn-outline-primary">Filter</button>
+        </form>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Class</th>
+            <th>Book</th>
+            <th>Reading Level</th>
+            <th>Duration (Min)</th>
+            <th>Week Start</th>
+            <th>Notes</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var record in Model)
+        {
+            <tr>
+                <td>@record.Student?.FirstName @record.Student?.LastName</td>
+                <td>@record.Student?.Classroom?.Name</td>
+                <td>@(record.Book?.Title ?? "N/A")</td>
+                <td>@record.ReadingLevel</td>
+                <td>@record.DurationMinutes</td>
+                <td>@record.WeekStartDate.ToString("yyyy-MM-dd")</td>
+                <td>@(record.Notes ?? "")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@record.Id" class="btn btn-sm btn-primary">Edit</a>
+                    @if (User.IsInRole("Coordinator"))
+                    {
+                        <a asp-action="Delete" asp-route-id="@record.Id" class="btn btn-sm btn-danger">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

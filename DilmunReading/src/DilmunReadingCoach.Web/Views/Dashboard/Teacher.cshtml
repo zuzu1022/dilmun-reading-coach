@@ -1,0 +1,184 @@
+@model TeacherDashboardViewModel
+@{
+    ViewData["Title"] = "Teacher Dashboard";
+}
+
+<div class="page-header">
+    <h2><i class="bi bi-speedometer2 me-2"></i>Teacher Dashboard</h2>
+</div>
+
+<div class="row g-4 mb-4">
+    <div class="col-md-4 col-sm-6">
+        <div class="stat-card stat-primary">
+            <div class="stat-label">My Students</div>
+            <div class="stat-value">@Model.TotalStudents</div>
+            <i class="bi bi-people" style="position: absolute; right: 1.5rem; top: 1.5rem; font-size: 2.5rem; opacity: 0.2;"></i>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+        <div class="stat-card stat-info">
+            <div class="stat-label">Total Records</div>
+            <div class="stat-value">@Model.TotalReadingRecords</div>
+            <i class="bi bi-journal-text" style="position: absolute; right: 1.5rem; top: 1.5rem; font-size: 2.5rem; opacity: 0.2;"></i>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+        <div class="stat-card stat-warning">
+            <div class="stat-label">Total Minutes</div>
+            <div class="stat-value">@Model.TotalReadingMinutes</div>
+            <i class="bi bi-clock" style="position: absolute; right: 1.5rem; top: 1.5rem; font-size: 2.5rem; opacity: 0.2;"></i>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-building me-2"></i>My Classes
+            </div>
+            <div class="card-body">
+                @if (Model.ClassSummaries.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Class</th>
+                                    <th>Students</th>
+                                    <th>Records</th>
+                                    <th>Minutes</th>
+                                    <th>Avg Level</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var summary in Model.ClassSummaries)
+                                {
+                                    <tr>
+                                        <td><strong>@summary.ClassName</strong></td>
+                                        <td>@summary.StudentCount</td>
+                                        <td>@summary.RecordCount</td>
+                                        <td>@summary.TotalMinutes</td>
+                                        <td><span class="badge bg-info">@summary.AverageReadingLevel</span></td>
+                                        <td>
+                                            <a asp-controller="Reading" asp-action="Create" asp-route-classroomId="@summary.ClassId" class="btn btn-sm btn-primary">
+                                                <i class="bi bi-plus-circle me-1"></i>Add Entry
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="empty-state">
+                        <div class="empty-state-icon"><i class="bi bi-inbox"></i></div>
+                        <p>No classes assigned</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-person-check me-2"></i>Student Last Reading Levels
+            </div>
+            <div class="card-body">
+                @if (Model.StudentLastReadings.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Class</th>
+                                    <th>Last Reading Level</th>
+                                    <th>Last Reading Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var student in Model.StudentLastReadings)
+                                {
+                                    <tr>
+                                        <td><strong>@student.StudentName</strong></td>
+                                        <td>@student.ClassName</td>
+                                        <td><span class="badge bg-info">@student.LastReadingLevel</span></td>
+                                        <td>@(student.LastReadingDate?.ToString("yyyy-MM-dd") ?? "No records")</td>
+                                        <td>
+                                            <a asp-controller="Reading" asp-action="Create" asp-route-studentId="@student.StudentId" class="btn btn-sm btn-primary">
+                                                <i class="bi bi-plus-circle me-1"></i>Add Entry
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="empty-state">
+                        <div class="empty-state-icon"><i class="bi bi-inbox"></i></div>
+                        <p>No students found</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-exclamation-triangle me-2"></i>Missing Entries (Current Week)
+            </div>
+            <div class="card-body">
+                @if (Model.MissingEntries.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Class</th>
+                                    <th>Week Start</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var entry in Model.MissingEntries)
+                                {
+                                    <tr>
+                                        <td><strong>@entry.StudentName</strong></td>
+                                        <td>@entry.ClassName</td>
+                                        <td>@entry.WeekStart.ToString("yyyy-MM-dd")</td>
+                                        <td>
+                                            <a asp-controller="Reading" asp-action="Create" asp-route-studentId="@entry.StudentId" class="btn btn-sm btn-primary">
+                                                <i class="bi bi-plus-circle me-1"></i>Add Entry
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-success mb-0">
+                        <i class="bi bi-check-circle me-2"></i>All students have entries for this week!
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{686F6444-590B-4477-BE78-FAA40872501B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DilmunReadingCoach.Web", "src\DilmunReadingCoach.Web\DilmunReadingCoach.Web.csproj", "{022460E4-86BD-474F-B680-7C921E688F7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DilmunReadingCoach.Core", "src\DilmunReadingCoach.Core\DilmunReadingCoach.Core.csproj", "{804B6C8F-1491-40CB-B887-CB381F78D408}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DilmunReadingCoach.Infrastructure", "src\DilmunReadingCoach.Infrastructure\DilmunReadingCoach.Infrastructure.csproj", "{A933BC09-327D-47E9-8ED1-12828575588E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{022460E4-86BD-474F-B680-7C921E688F7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022460E4-86BD-474F-B680-7C921E688F7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022460E4-86BD-474F-B680-7C921E688F7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022460E4-86BD-474F-B680-7C921E688F7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{804B6C8F-1491-40CB-B887-CB381F78D408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804B6C8F-1491-40CB-B887-CB381F78D408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804B6C8F-1491-40CB-B887-CB381F78D408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804B6C8F-1491-40CB-B887-CB381F78D408}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A933BC09-327D-47E9-8ED1-12828575588E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A933BC09-327D-47E9-8ED1-12828575588E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A933BC09-327D-47E9-8ED1-12828575588E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A933BC09-327D-47E9-8ED1-12828575588E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{022460E4-86BD-474F-B680-7C921E688F7C} = {686F6444-590B-4477-BE78-FAA40872501B}
+		{804B6C8F-1491-40CB-B887-CB381F78D408} = {686F6444-590B-4477-BE78-FAA40872501B}
+		{A933BC09-327D-47E9-8ED1-12828575588E} = {686F6444-590B-4477-BE78-FAA40872501B}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\bin\Debug\net8.0\DilmunReadingCoach.Infrastructure.deps.json
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\bin\Debug\net8.0\DilmunReadingCoach.Infrastructure.runtimeconfig.json
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\bin\Debug\net8.0\DilmunReadingCoach.Infrastructure.dll
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\bin\Debug\net8.0\DilmunReadingCoach.Infrastructure.pdb
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\bin\Debug\net8.0\DilmunReadingCoach.Core.dll
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\bin\Debug\net8.0\DilmunReadingCoach.Core.pdb
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\obj\Debug\net8.0\DilmunReadingCoach.Infrastructure.csproj.AssemblyReference.cache
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\obj\Debug\net8.0\DilmunReadingCoach.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\obj\Debug\net8.0\DilmunReadingCoach.Infrastructure.AssemblyInfoInputs.cache
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\obj\Debug\net8.0\DilmunReadingCoach.Infrastructure.AssemblyInfo.cs
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\obj\Debug\net8.0\DilmunReadingCoach.Infrastructure.csproj.CoreCompileInputs.cache
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\obj\Debug\net8.0\DilmunRe.117E20DE.Up2Date
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\obj\Debug\net8.0\DilmunReadingCoach.Infrastructure.dll
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\obj\Debug\net8.0\refint\DilmunReadingCoach.Infrastructure.dll
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\obj\Debug\net8.0\DilmunReadingCoach.Infrastructure.pdb
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\obj\Debug\net8.0\DilmunReadingCoach.Infrastructure.genruntimeconfig.cache
+E:\HussainWebsite\src\DilmunReadingCoach.Infrastructure\obj\Debug\net8.0\ref\DilmunReadingCoach.Infrastructure.dll

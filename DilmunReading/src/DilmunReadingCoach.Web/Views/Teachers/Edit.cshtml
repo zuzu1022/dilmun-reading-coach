@@ -1,0 +1,79 @@
+@model EditTeacherViewModel
+@{
+    ViewData["Title"] = "Edit Teacher";
+}
+
+<h2>Edit Teacher</h2>
+<hr />
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    
+    <div class="form-group mb-3">
+        <label asp-for="Username" class="form-label"></label>
+        <input asp-for="Username" class="form-control" readonly />
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label asp-for="FirstName" class="form-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label asp-for="LastName" class="form-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" type="email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label asp-for="Phone" class="form-label"></label>
+                <input asp-for="Phone" class="form-control" />
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group mb-3">
+        <div class="form-check">
+            <input asp-for="IsActive" class="form-check-input" />
+            <label asp-for="IsActive" class="form-check-label">Active</label>
+        </div>
+    </div>
+    
+    <div class="form-group mb-3">
+        <label class="form-label">Assign Classes</label>
+        @foreach (var classroom in (List<Classroom>)ViewBag.Classrooms)
+        {
+            <div class="form-check">
+                <input type="checkbox" name="ClassroomIds" value="@classroom.Id" class="form-check-input" 
+                       @(ViewBag.SelectedClassrooms != null && ((List<Guid>)ViewBag.SelectedClassrooms).Contains(classroom.Id) ? "checked" : "") />
+                <label class="form-check-label">@classroom.Name</label>
+            </div>
+        }
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

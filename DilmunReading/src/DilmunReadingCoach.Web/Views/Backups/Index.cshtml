@@ -1,0 +1,62 @@
+@model List<BackupRecord>
+@{
+    ViewData["Title"] = "Backups";
+}
+
+<h2>Backups</h2>
+<hr />
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<div class="mb-3">
+    <form asp-action="CreateBackup" method="post">
+        <button type="submit" class="btn btn-primary">Create Manual Backup</button>
+    </form>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Started At</th>
+            <th>Completed At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var backup in Model)
+        {
+            <tr>
+                <td>@backup.FileName</td>
+                <td>@backup.Type</td>
+                <td>
+                    <span class="badge bg-@(backup.Status == "Success" ? "success" : backup.Status == "Failed" ? "danger" : "warning")">
+                        @backup.Status
+                    </span>
+                </td>
+                <td>@backup.StartedAtUtc.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@(backup.CompletedAtUtc?.ToString("yyyy-MM-dd HH:mm") ?? "In Progress")</td>
+                <td>
+                    @if (backup.Status == "Success")
+                    {
+                        <form asp-action="Restore" method="post" class="d-inline">
+                            <input type="hidden" name="id" value="@backup.Id" />
+                            <button type="submit" class="btn btn-sm btn-warning" onclick="return confirm('Are you sure you want to restore from this backup? This will overwrite current data.')">Restore</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

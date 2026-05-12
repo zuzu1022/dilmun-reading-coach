@@ -1,0 +1,44 @@
+@{
+    ViewData["Title"] = "Term Report";
+}
+
+<h2>Term Report</h2>
+<hr />
+
+<form asp-action="TermReport" method="post">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group mb-3">
+                <label for="classroomId" class="form-label">Class (Optional)</label>
+                <select name="classroomId" class="form-control" id="classroomId">
+                    <option value="">All Classes</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group mb-3">
+                <label for="termStart" class="form-label">Term Start Date</label>
+                <input type="date" name="termStart" class="form-control" id="termStart" required />
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group mb-3">
+                <label for="termEnd" class="form-label">Term End Date</label>
+                <input type="date" name="termEnd" class="form-control" id="termEnd" required />
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group mb-3">
+                <label for="format" class="form-label">Format</label>
+                <select name="format" class="form-control" id="format">
+                    <option value="pdf">PDF</option>
+                    <option value="excel">Excel (CSV)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Generate Report</button>
+    </div>
+</form>
+

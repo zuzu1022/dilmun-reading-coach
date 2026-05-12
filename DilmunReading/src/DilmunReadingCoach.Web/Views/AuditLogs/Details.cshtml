@@ -1,0 +1,46 @@
+@model AuditLog
+@{
+    ViewData["Title"] = "Audit Log Details";
+}
+
+<div class="page-header">
+    <h2><i class="bi bi-file-text me-2"></i>Audit Log Details</h2>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3"><i class="bi bi-hash me-2"></i>ID</dt>
+            <dd class="col-sm-9">@Model.Id</dd>
+            
+            <dt class="col-sm-3"><i class="bi bi-calendar me-2"></i>Date/Time</dt>
+            <dd class="col-sm-9">@Model.CreatedAtUtc.ToString("yyyy-MM-dd HH:mm:ss UTC")</dd>
+            
+            <dt class="col-sm-3"><i class="bi bi-person me-2"></i>User ID</dt>
+            <dd class="col-sm-9"><code>@Model.UserId</code></dd>
+            
+            <dt class="col-sm-3"><i class="bi bi-person-badge me-2"></i>User Name</dt>
+            <dd class="col-sm-9"><strong>@ViewBag.UserName</strong></dd>
+            
+            <dt class="col-sm-3"><i class="bi bi-lightning me-2"></i>Action Type</dt>
+            <dd class="col-sm-9"><span class="badge bg-info">@Model.ActionType</span></dd>
+            
+            <dt class="col-sm-3"><i class="bi bi-box me-2"></i>Entity</dt>
+            <dd class="col-sm-9">@(Model.Entity ?? "N/A")</dd>
+            
+            <dt class="col-sm-3"><i class="bi bi-key me-2"></i>Entity ID</dt>
+            <dd class="col-sm-9">@(Model.EntityId?.ToString() ?? "N/A")</dd>
+            
+            <dt class="col-sm-3"><i class="bi bi-file-text me-2"></i>Description</dt>
+            <dd class="col-sm-9">@(Model.Description ?? "N/A")</dd>
+            
+            <dt class="col-sm-3"><i class="bi bi-globe me-2"></i>IP Address</dt>
+            <dd class="col-sm-9"><code>@(Model.IpAddress ?? "N/A")</code></dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="bi bi-arrow-left me-1"></i>Back to List
+        </a>
+    </div>
+</div>

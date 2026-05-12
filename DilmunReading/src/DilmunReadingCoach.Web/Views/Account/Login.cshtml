@@ -1,0 +1,124 @@
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout";
+}
+
+<div class="row justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="col-md-5 col-lg-4">
+        <div class="card shadow-md">
+            <div class="card-body p-5">
+                <div class="text-center mb-4">
+                    <i class="bi bi-book-half text-primary" style="font-size: 3rem;"></i>
+                    <h2 class="mt-3 mb-1">Welcome Back</h2>
+                    <p class="text-muted">Sign in to Dilmun Reading Coach</p>
+                </div>
+                
+                @if (ViewData.ModelState[string.Empty]?.Errors != null && ViewData.ModelState[string.Empty].Errors.Count > 0)
+                {
+                    <div class="alert alert-danger mb-3" role="alert" style="background-color: #f8d7da; border-color: #f5c6cb; color: #721c24;">
+                        <ul class="mb-0 ps-3">
+                            @foreach (var error in ViewData.ModelState[string.Empty].Errors)
+                            {
+                                <li>@error.ErrorMessage</li>
+                            }
+                        </ul>
+                    </div>
+                }
+                
+                @if (TempData["ResetRequestError"] != null)
+                {
+                    <div class="alert alert-danger mb-3" role="alert" style="background-color: #f8d7da; border-color: #f5c6cb; color: #721c24;">
+                        <i class="bi bi-exclamation-triangle me-2"></i>@TempData["ResetRequestError"]
+                    </div>
+                }
+                
+                <form asp-action="Login" method="post">
+                    
+                    <div class="form-group mb-3">
+                        <label asp-for="Username" class="form-label">
+                            <i class="bi bi-person me-1"></i>Username
+                        </label>
+                        <input asp-for="Username" class="form-control" placeholder="Enter your username" />
+                        <span asp-validation-for="Username" class="text-danger small"></span>
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label asp-for="Password" class="form-label">
+                            <i class="bi bi-lock me-1"></i>Password
+                        </label>
+                        <input asp-for="Password" class="form-control" placeholder="Enter your password" />
+                        <span asp-validation-for="Password" class="text-danger small"></span>
+                    </div>
+                    
+                    <div class="form-group mb-4">
+                        <div class="form-check">
+                            <input asp-for="RememberMe" class="form-check-input" />
+                            <label asp-for="RememberMe" class="form-check-label">Remember me</label>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Sign In
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="text-center mt-3">
+                    <button type="button" class="btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#resetPasswordModal">
+                        <i class="bi bi-key me-1"></i>Forgot Password? Request Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reset Password Modal -->
+<div class="modal fade" id="resetPasswordModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-key me-2"></i>Request Password Reset
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form asp-action="RequestPasswordReset" method="post" id="resetPasswordForm">
+                @Html.AntiForgeryToken()
+                <div class="modal-body">
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        Enter your username to request a password reset. Your request will be sent to the coordinator for approval.
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="resetUsername" class="form-label">
+                            <i class="bi bi-person me-1"></i>Username
+                        </label>
+                        <input type="text" name="username" class="form-control" id="resetUsername" required placeholder="Enter your username" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-send me-1"></i>Submit Request
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@if (TempData["ResetRequestSuccess"] != null)
+{
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            alert('@TempData["ResetRequestSuccess"]');
+        });
+    </script>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

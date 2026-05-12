@@ -1,0 +1,41 @@
+@model List<ApplicationUser>
+@{
+    ViewData["Title"] = "Teachers";
+}
+
+<h2>Teachers</h2>
+<hr />
+
+<div class="mb-3">
+    <a asp-action="Create" class="btn btn-primary">Add New Teacher</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var teacher in Model)
+        {
+            <tr>
+                <td>@teacher.UserName</td>
+                <td>@teacher.FirstName @teacher.LastName</td>
+                <td>@teacher.Email</td>
+                <td>@teacher.PhoneNumber</td>
+                <td>@(teacher.IsActive ? "Active" : "Inactive")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@teacher.Id" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@teacher.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

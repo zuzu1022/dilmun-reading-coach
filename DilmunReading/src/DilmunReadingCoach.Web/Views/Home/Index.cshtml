@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <div class="text-center">
+        <h1 class="display-4">Welcome to Dilmun Reading Coach</h1>
+        <p class="lead">Track and manage student reading progress</p>
+        <a asp-controller="Dashboard" asp-action="@(User.IsInRole("Coordinator") ? "Coordinator" : "Teacher")" class="btn btn-primary btn-lg">Go to Dashboard</a>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <h1 class="display-4">Welcome to Dilmun Reading Coach</h1>
+        <p class="lead">Please login to continue</p>
+        <a asp-controller="Account" asp-action="Login" class="btn btn-primary btn-lg">Login</a>
+    </div>
+}

@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Weekly Report";
+}
+
+<h2>Weekly Report</h2>
+<hr />
+
+<form asp-action="WeeklyReport" method="post">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group mb-3">
+                <label for="classroomId" class="form-label">Class (Optional)</label>
+                <select name="classroomId" class="form-control" id="classroomId">
+                    <option value="">All Classes</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-3">
+                <label for="weekStart" class="form-label">Week Start Date</label>
+                <input type="date" name="weekStart" class="form-control" id="weekStart" required />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-3">
+                <label for="format" class="form-label">Format</label>
+                <select name="format" class="form-control" id="format">
+                    <option value="pdf">PDF</option>
+                    <option value="excel">Excel (CSV)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Generate Report</button>
+    </div>
+</form>
+

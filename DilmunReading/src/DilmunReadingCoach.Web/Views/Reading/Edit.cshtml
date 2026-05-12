@@ -1,0 +1,78 @@
+@model ReadingProgress
+@{
+    ViewData["Title"] = "Edit Reading Record";
+}
+
+<h2>Edit Reading Record</h2>
+<hr />
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="TeacherId" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label asp-for="StudentId" class="form-label"></label>
+                <select asp-for="StudentId" class="form-control">
+                    <option value="">Select Student</option>
+                    @foreach (var student in (List<Student>)ViewBag.Students)
+                    {
+                        <option value="@student.Id">@student.FirstName @student.LastName (@student.StudentCode)</option>
+                    }
+                </select>
+                    <option value="">Select Student</option>
+                </select>
+                <span asp-validation-for="StudentId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label asp-for="BookId" class="form-label"></label>
+                <select asp-for="BookId" class="form-control" asp-items="@(new SelectList(ViewBag.Books, "Id", "Title"))">
+                    <option value="">Select Book (Optional)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group mb-3">
+                <label asp-for="WeekStartDate" class="form-label"></label>
+                <input asp-for="WeekStartDate" type="date" class="form-control" />
+                <span asp-validation-for="WeekStartDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-3">
+                <label asp-for="ReadingLevel" class="form-label"></label>
+                <input asp-for="ReadingLevel" class="form-control" />
+                <span asp-validation-for="ReadingLevel" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-3">
+                <label asp-for="DurationMinutes" class="form-label"></label>
+                <input asp-for="DurationMinutes" type="number" min="0" class="form-control" />
+                <span asp-validation-for="DurationMinutes" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group mb-3">
+        <label asp-for="Notes" class="form-label"></label>
+        <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

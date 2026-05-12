@@ -1,0 +1,28 @@
+@model ApplicationUser
+@{
+    ViewData["Title"] = "Delete Teacher";
+}
+
+<h2>Delete Teacher</h2>
+<hr />
+
+<h3>Are you sure you want to deactivate this teacher?</h3>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Username</dt>
+        <dd class="col-sm-10">@Model.UserName</dd>
+        
+        <dt class="col-sm-2">Name</dt>
+        <dd class="col-sm-10">@Model.FirstName @Model.LastName</dd>
+        
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Model.Email</dd>
+    </dl>
+    
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <button type="submit" class="btn btn-danger">Deactivate</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+

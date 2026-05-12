@@ -1,0 +1,113 @@
+@model List<AuditLog>
+@{
+    ViewData["Title"] = "Audit Logs";
+}
+
+<div class="page-header">
+    <h2><i class="bi bi-file-text me-2"></i>Audit Logs</h2>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label for="actionType" class="form-label">Action Type</label>
+                    <select name="actionType" class="form-select" id="actionType">
+                        <option value="">All Actions</option>
+                        @foreach (var actionType in (List<string>)ViewBag.ActionTypes)
+                        {
+                            <option value="@actionType" selected="@(ViewContext.HttpContext.Request.Query["actionType"] == actionType)">@actionType</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="entity" class="form-label">Entity</label>
+                    <select name="entity" class="form-select" id="entity">
+                        <option value="">All Entities</option>
+                        @foreach (var entity in (List<string>)ViewBag.Entities)
+                        {
+                            <option value="@entity" selected="@(ViewContext.HttpContext.Request.Query["entity"] == entity)">@entity</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="startDate" class="form-label">Start Date</label>
+                    <input type="date" name="startDate" class="form-control" id="startDate" value="@ViewContext.HttpContext.Request.Query["startDate"]" />
+                </div>
+                <div class="col-md-2">
+                    <label for="endDate" class="form-label">End Date</label>
+                    <input type="date" name="endDate" class="form-control" id="endDate" value="@ViewContext.HttpContext.Request.Query["endDate"]" />
+                </div>
+                <div class="col-md-2 d-flex align-items-end">
+                    <div class="w-100">
+                        <button type="submit" class="btn btn-primary w-100 mb-2">
+                            <i class="bi bi-funnel me-1"></i>Filter
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary w-100">
+                            <i class="bi bi-x-circle me-1"></i>Clear
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="alert alert-info">
+    <i class="bi bi-info-circle me-2"></i>Showing @Model.Count of @ViewBag.TotalCount total logs
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date/Time</th>
+                        <th>User</th>
+                        <th>Action</th>
+                        <th>Entity</th>
+                        <th>Description</th>
+                        <th>IP Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var log in Model)
+                    {
+                        var users = (IDictionary<Guid, string>)ViewBag.Users;
+                        users.TryGetValue(log.UserId, out var userName);
+                        <tr>
+                            <td><small>@log.CreatedAtUtc.ToString("yyyy-MM-dd HH:mm:ss")</small></td>
+                            <td><strong>@(userName ?? log.UserId.ToString().Substring(0, 8) + "...")</strong></td>
+                            <td><span class="badge bg-info">@log.ActionType</span></td>
+                            <td>@(log.Entity ?? "N/A")</td>
+                            <td>@(log.Description ?? "")</td>
+                            <td><small>@(log.IpAddress ?? "N/A")</small></td>
+                            <td>
+                                <a asp-action="Details" asp-route-id="@log.Id" class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-eye me-1"></i>Details
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.TotalPages > 1)
+{
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                    <a class="page-link" href="?page=@i&actionType=@ViewContext.HttpContext.Request.Query["actionType"]&entity=@ViewContext.HttpContext.Request.Query["entity"]&startDate=@ViewContext.HttpContext.Request.Query["startDate"]&endDate=@ViewContext.HttpContext.Request.Query["endDate"]">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}

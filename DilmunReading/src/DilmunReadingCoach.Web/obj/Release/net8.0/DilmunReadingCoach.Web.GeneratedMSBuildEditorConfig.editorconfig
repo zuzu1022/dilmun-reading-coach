@@ -1,0 +1,167 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DilmunReadingCoach.Web
+build_property.RootNamespace = DilmunReadingCoach.Web
+build_property.ProjectDir = E:\HussainWebsite\src\DilmunReadingCoach.Web\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\HussainWebsite\src\DilmunReadingCoach.Web
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/AuditLogs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVkaXRMb2dzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/AuditLogs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVkaXRMb2dzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Backups/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFja3Vwc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Books/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Books/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Books/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Books/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Classes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Classes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Classes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Classes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Dashboard/Coordinator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXENvb3JkaW5hdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Dashboard/Teacher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFRlYWNoZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/PasswordResets/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzc3dvcmRSZXNldHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Reading/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhZGluZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Reading/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhZGluZ1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Reading/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhZGluZ1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Reading/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhZGluZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Reports/Term.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xUZXJtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Reports/Weekly.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xXZWVrbHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Students/BulkImport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcQnVsa0ltcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Students/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Students/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Students/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Students/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Teachers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Teachers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Teachers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Teachers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HussainWebsite/src/DilmunReadingCoach.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-xdkwghkt0f

@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Bulk Import Students";
+}
+
+<h2>Bulk Import Students</h2>
+<hr />
+
+@if (ViewBag.Success != null)
+{
+    <div class="alert alert-success">
+        <h4>Import Results</h4>
+        <p>Successfully imported: @ViewBag.Success records</p>
+        <p>Failed: @ViewBag.Failed records</p>
+        @if (ViewBag.Errors != null && ((List<string>)ViewBag.Errors).Any())
+        {
+            <ul>
+                @foreach (var error in (List<string>)ViewBag.Errors)
+                {
+                    <li>@error</li>
+                }
+            </ul>
+        }
+    </div>
+}
+
+<div class="alert alert-info">
+    <h5>CSV Format</h5>
+    <p>Expected columns: StudentCode, FirstName, LastName, Gender, DateOfBirth, ClassroomName, ReadingLevel</p>
+    <p>Example:</p>
+    <pre>ST001,John,Doe,Male,2010-01-15,Grade 1A,Level 2</pre>
+</div>
+
+<form asp-action="BulkImport" method="post" enctype="multipart/form-data">
+    <div class="form-group mb-3">
+        <label for="file" class="form-label">Select CSV File</label>
+        <input type="file" name="file" class="form-control" accept=".csv" required />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Import</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+

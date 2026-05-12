@@ -1,0 +1,53 @@
+@model List<Student>
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h2>Students</h2>
+<hr />
+
+<div class="row mb-3">
+    <div class="col-md-6">
+        <a asp-action="Create" class="btn btn-primary">Add New Student</a>
+        <a asp-action="BulkImport" class="btn btn-secondary">Bulk Import</a>
+    </div>
+    <div class="col-md-6">
+        <form method="get" class="d-flex">
+            <select name="classroomId" class="form-select me-2" asp-items="@(new SelectList(ViewBag.Classrooms, "Id", "Name", ViewContext.HttpContext.Request.Query["classroomId"]))">
+                <option value="">All Classes</option>
+            </select>
+            <input type="text" name="searchTerm" class="form-control me-2" placeholder="Search..." value="@ViewContext.HttpContext.Request.Query["searchTerm"]" />
+            <button type="submit" class="btn btn-outline-primary">Search</button>
+        </form>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Student Code</th>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Reading Level</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentCode</td>
+                <td>@student.FirstName @student.LastName</td>
+                <td>@student.Classroom?.Name</td>
+                <td>@student.ReadingLevel</td>
+                <td>@student.Status</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.Id" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@student.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

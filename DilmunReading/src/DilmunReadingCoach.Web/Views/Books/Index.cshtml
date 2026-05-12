@@ -1,0 +1,58 @@
+@model List<Book>
+@{
+    ViewData["Title"] = "Books";
+}
+
+<h2>Books</h2>
+<hr />
+
+<div class="row mb-3">
+    <div class="col-md-6">
+        @if (User.IsInRole("Coordinator"))
+        {
+            <a asp-action="Create" class="btn btn-primary">Add New Book</a>
+        }
+    </div>
+    <div class="col-md-6">
+        <form method="get" class="d-flex">
+            <input type="text" name="searchTerm" class="form-control me-2" placeholder="Search..." value="@ViewContext.HttpContext.Request.Query["searchTerm"]" />
+            <button type="submit" class="btn btn-outline-primary">Search</button>
+        </form>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Reading Level</th>
+            <th>Status</th>
+            @if (User.IsInRole("Coordinator"))
+            {
+                <th>Actions</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Category</td>
+                <td>@book.ReadingLevel</td>
+                <td>@book.Status</td>
+                @if (User.IsInRole("Coordinator"))
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-sm btn-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@book.Id" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
