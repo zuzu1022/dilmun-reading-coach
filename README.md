@@ -2,13 +2,13 @@
 
 ## Upload local project folder
 
-To upload your local folder into this repository (for example, `C:\Users\zaina\Desktop\DilmunReading`):
+To upload your local folder into this repository (for example, `C:\Users\zaina\Desktop\DilmunReading`, which is `/c/Users/zaina/Desktop/DilmunReading` in Git Bash):
 
 1. Open Git Bash (or Command Prompt).
 2. Run:
 
 ```bash
-cd /c/Users/zaina/Desktop/DilmunReading
+cd /c/Users/<username>/Desktop/DilmunReading
 git init
 git branch -M main
 git remote add origin https://github.com/zuzu1022/dilmun-reading-coach.git
