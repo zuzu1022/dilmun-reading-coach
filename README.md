@@ -17,7 +17,11 @@ git commit -m "Initial upload"
 git push -u origin main
 ```
 
-If `git remote add origin ...` fails with `remote origin already exists`, use the command in the final section below.
+If `git remote add origin ...` fails with `remote origin already exists`, run:
+
+```bash
+git remote set-url origin https://github.com/zuzu1022/dilmun-reading-coach.git
+```
 
 If `git push` is rejected because remote `main` already has commits, run:
 
@@ -32,10 +36,4 @@ If rebase conflicts appear, resolve them, then continue with:
 git add .
 git rebase --continue
 git push -u origin main
-```
-
-If the remote already exists, use:
-
-```bash
-git remote set-url origin https://github.com/zuzu1022/dilmun-reading-coach.git
 ```
