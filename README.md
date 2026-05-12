@@ -2,13 +2,13 @@
 
 ## Upload local project folder
 
-To upload your local folder into this repository (for example, `C:\Users\zaina\Desktop\DilmunReading`, which is `/c/Users/zaina/Desktop/DilmunReading` in Git Bash):
+To upload your local folder into this repository (for example, `C:\Users\<username>\Desktop\DilmunReading`, which is `/c/Users/<username>/Desktop/DilmunReading` in Git Bash):
 
 1. Open Git Bash (or Command Prompt).
 2. Run:
 
 ```bash
-cd /c/Users/<username>/Desktop/DilmunReading
+cd /c/Users/<username>/Desktop/<your-project-folder>
 git init
 git branch -M main
 git remote add origin https://github.com/zuzu1022/dilmun-reading-coach.git
@@ -16,6 +16,8 @@ git add .
 git commit -m "Initial upload"
 git push -u origin main
 ```
+
+If `git remote add origin ...` fails with `remote origin already exists`, use the command in the final section below.
 
 If `git push` is rejected because remote `main` already has commits, run:
 
